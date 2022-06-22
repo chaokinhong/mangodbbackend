@@ -19,10 +19,11 @@ app.get("/", (req, res) => {
 //mongodb
 const CONNECTION_URL = process.env.CONNECTION_URL;
 
+const PORT = process.env.PORT || 5000
 //connect to databse
 mongoose
   .connect(CONNECTION_URL)
   .then(() =>
-    app.listen( process.env.PORT || 5000,() => console.log(`Server running on port: ${PORT}`))
+    app.listen( PORT ,() => console.log(`Server running on port: ${PORT}`))
   )
   .catch((error) => console.log(error.message));

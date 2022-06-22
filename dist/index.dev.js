@@ -33,10 +33,11 @@ app.get("/", function (req, res) {
   res.send("Hello to MangoDB Backend");
 }); //mongodb
 
-var CONNECTION_URL = process.env.CONNECTION_URL; //connect to databse
+var CONNECTION_URL = process.env.CONNECTION_URL;
+var PORT = process.env.PORT || 5000; //connect to databse
 
 _mongoose["default"].connect(CONNECTION_URL).then(function () {
-  return app.listen(process.env.PORT || 5000, function () {
+  return app.listen(PORT, function () {
     return console.log("Server running on port: ".concat(PORT));
   });
 })["catch"](function (error) {
