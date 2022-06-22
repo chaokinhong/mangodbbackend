@@ -5,13 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "postinstall": "npm run build",
     "start": "nodemon index.js"
   },
-  "engines": {
-    "node": "16.15.0",
-    "npm": "8.5.5"
-  },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
