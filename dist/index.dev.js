@@ -8,11 +8,16 @@ var _mongoose = _interopRequireDefault(require("mongoose"));
 
 var _cors = _interopRequireDefault(require("cors"));
 
+var _dotenv = _interopRequireDefault(require("dotenv"));
+
 var _post = _interopRequireDefault(require("./routes/post.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var app = (0, _express["default"])();
+
+_dotenv["default"].config();
+
 app.use(_bodyParser["default"].json({
   limit: "30mb",
   extended: true
