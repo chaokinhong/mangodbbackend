@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 //mongodb
 const CONNECTION_URL = process.env.CONNECTION_URL;
 const HOST = '0.0.0.0';
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT ;
 
 //connect to databse
 mongoose
