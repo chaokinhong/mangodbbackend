@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import postRoutes from "./routes/post.js";
+import userRoutes from "./routes/user.js";
 
 
 const app = express();
@@ -13,6 +14,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 // every route inside the post routes is going to start with posts
 app.use("/posts", postRoutes);
+app.use('/user',userRoutes)
 app.get("/", (req, res) => {
   res.send("Hello to MangoDB Backend");
 });
@@ -25,6 +27,6 @@ const PORT = process.env.PORT || 5000
 mongoose
   .connect(CONNECTION_URL)
   .then(() =>
-    app.listen( PORT ,() => console.log(`Server running on port: ${PORT}`))
+    app.listen( 5000 ,() => console.log(`Server running on port: ${PORT}`))
   )
   .catch((error) => console.log(error.message));
